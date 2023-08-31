@@ -1,0 +1,69 @@
+
+
+header {
+    height: 60px;
+    background-color: var(--secondary-color);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+}
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+.elementForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+    width: 100%;
+}
+.inputs {
+    width: 100%;
+    height: 2rem;
+    background-color: --white;
+    border-radius: 5px;
+    border: 1px solid #757575;
+    padding-left: 0.5rem;
+}
+
+#button1 {
+    background-color: var(--secondary-color);
+    color: #ECF1F5;
+    cursor: pointer;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.op1 {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.op2 {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+
+@media (max-width:480px){
+    .formLogin{
+        padding: 0 5%;
+    }
+}
