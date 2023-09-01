@@ -1,11 +1,9 @@
-<x-auth-session-status class="mb-4" :status="session('status')" />
 <!DOCTYPE html>
-
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/styleLogin.css">
 </head>
@@ -14,19 +12,22 @@
         <h1>header</h1>
     </header>
     <main class="container">
-            <form method="POST" action="http://localhost:8000/login">
-                @csrf
-                <h1>Login</h1>
-               
+            <form method="POST" action="{{route('login')}}" class="formLogin">
+            @csrf 
+            <h1>Login</h1>
                 <div class="elementForm">
-                    <label for="email">Login</label>
-                    <input class="inputs" type="text" name="email" required>
+                    <label for="login">Email</label>
+                    <input  class="inputs @error('email') is-invalid @enderror" type="text" name="email" required>
                 </div>
                 <div class="elementForm">
-                    <label for="password">Senha</label>
+                    <label for="senha">Senha</label>
                     <input class="inputs" type="password" name="password" required>
                 </div>
-              <button class="inputs" id="button1" type="submit"  >Entrar</button>
+                @error('email')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+               <button class="inputs" id="button1" type="submit">Entrar</button>
+               
                 <!-- <div class="opcoes">
                     <div class="op1">
                         <input type="checkbox" name="contLogin" id="">
@@ -36,7 +37,6 @@
                         <p>Esqueci a senha</p>
                     </div>
                 </div> -->
-               
             </form>
     </main>
     
