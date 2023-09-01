@@ -23,7 +23,7 @@
     --font-button-weight: 700; /* Definindo espessura das fontes de botão */
 
     /*Tamanho das fontes */
-    --font-size-tittle-primary: 64px; /* Definindo o tamanho das fontes de título */
+    --font-size-tittle-primary: 1.5rem; /* Definindo o tamanho das fontes de título */
     --font-size-tittle-secondary: 48px; /* Definindo o tamanho das fontes de subtítulo */
     --font-size-tittle-tertiary: 36px; /* Definindo o tamanho das fontes de subtítulo */
     --font-size-subtittle-primary: 24px; /* Definindo o tamanho das fontes de subtítulo */

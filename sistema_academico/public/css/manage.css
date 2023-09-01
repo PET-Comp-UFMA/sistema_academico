@@ -1,0 +1,86 @@
+:root{
+    --white: #FFFFFF;
+    --primary-color: #592895;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+  
+header {
+    height: 100px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+}
+
+.administrar-escolas {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.pesquisa {
+    width: 80%;
+    padding: 20px;
+}
+
+.baixo{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.baixo input{
+    width: 60%;
+    border-radius: 5px;
+    border: 1.2px solid var(--cinza-claro-dicas, #757575);
+}
+
+.button{
+    background-color: var(--primary-color);
+    color: white;
+    width: 200px;
+    height: 40px;   
+    cursor: pointer;
+}
+
+.buttonResult{  
+    cursor: pointer;
+}
+
+.quantidade{
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+}
+
+.resultados{
+    width: 80%;
+    padding: 20px;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    color: #717070;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #717070;
+}
+
+.cadastrar-escola{
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+}
