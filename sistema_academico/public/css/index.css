@@ -23,34 +23,34 @@
     --font-button-weight: 700; /* Definindo espessura das fontes de botão */
 
     /*Tamanho das fontes */
-    --font-size-tittle-primary: 64; /* Definindo o tamanho das fontes de título */
-    --font-size-tittle-secondary: 48; /* Definindo o tamanho das fontes de subtítulo */
-    --font-size-tittle-tertiary: 36; /* Definindo o tamanho das fontes de subtítulo */
-    --font-size-subtittle-primary: 24; /* Definindo o tamanho das fontes de subtítulo */
-    --font-size-subtittle-secondary: 16; /* Definindo o tamanho das fontes de subtítulo */
-    --font-size-body-big: 16; /* Definindo o tamanho das fontes do corpo */
-    --font-size-body-medium: 14; /* Definindo o tamanho das fontes do corpo */
-    --font-size-body-small: 12; /* Definindo o tamanho das fontes do corpo */
-    --font-size-button-big: 16; /* Definindo o tamanho das fontes dos botões */
-    --font-size-button-medium: 14; /* Definindo o tamanho das fontes dos botões */
+    --font-size-tittle-primary: 64px; /* Definindo o tamanho das fontes de título */
+    --font-size-tittle-secondary: 48px; /* Definindo o tamanho das fontes de subtítulo */
+    --font-size-tittle-tertiary: 36px; /* Definindo o tamanho das fontes de subtítulo */
+    --font-size-subtittle-primary: 24px; /* Definindo o tamanho das fontes de subtítulo */
+    --font-size-subtittle-secondary: 16px; /* Definindo o tamanho das fontes de subtítulo */
+    --font-size-body-big: 16px; /* Definindo o tamanho das fontes do corpo */
+    --font-size-body-medium: 14px; /* Definindo o tamanho das fontes do corpo */
+    --font-size-body-small: 12px; /* Definindo o tamanho das fontes do corpo */
+    --font-size-button-big: 16px; /* Definindo o tamanho das fontes dos botões */
+    --font-size-button-medium: 14px; /* Definindo o tamanho das fontes dos botões */
   }
 
 h1 {
     font-family: var(--font-tittle);
     font-weight: var(--font-tittle-weight);
-    font-size: var(--font-size-body-big);
+    font-size: var(--font-size-tittle-primary);
 }
 
 h2 {
     font-family: var(--font-tittle);
     font-weight: var(--font-tittle-weight);
-    font-size: var(--font-size-body-medium);
+    font-size: var(--font-size-tittle-secondary);
 }
 
 h3{
     font-family: var(--font-tittle);
     font-weight: var(--font-tittle-weight);
-    font-size: var(--font-size-body-small);
+    font-size: var(--font-size-tittle-tertiary);
 }
 
 h4 {
