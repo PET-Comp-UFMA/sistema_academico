@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InsertSchoolsController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ManagerSchoolsController;
+use App\Http\Controllers\ManagerTeachersController;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -22,9 +27,17 @@ Route::get('/login', function () {
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-
-
-
 Route::get('/dashboard', 
+
     [DashboardController::class, 'test']
 )->middleware('auth');
+
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/administrar-escolas', [ManagerSchoolsController::class, 'view'])->name('adm-escola');
+    Route::get('/cadastrar-escola', [InsertSchoolsController::class, 'view']);
+    Route::post('/cadastrar-escola', [InsertSchoolsController::class, 'store']);
+    Route::get('/administrar-professores', [ManagerTeachersController::class, 'view']);
+});
+
+
