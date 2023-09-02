@@ -1,13 +1,14 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\InsertSchoolsController;
-use App\Http\Controllers\DeleteSchoolsController;
-use App\Http\Controllers\EditSchoolsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ManagerSchoolsController;
 use App\Http\Controllers\ManagerTeachersController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\School\InsertSchoolsController;
+use App\Http\Controllers\School\DeleteSchoolsController;
+use App\Http\Controllers\School\EditSchoolsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,14 +37,17 @@ Route::get('/dashboard',
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/administrar-escolas', [ManagerSchoolsController::class, 'view'])->name('adm-escola');
+    
     Route::get('/cadastrar-escola', [InsertSchoolsController::class, 'view']);
     Route::post('/cadastrar-escola', [InsertSchoolsController::class, 'store']);
+    
     Route::get('/atualizar-escola/{id}', [EditSchoolsController::class, 'view']);
     Route::post('/atualizar-escola/{id}', [EditSchoolsController::class, 'edit']);
-    Route::delete('/excluir-escola/{id}', [DeleteSchoolsController::class, 'edit']);
+    
     Route::get('/excluir-escola/{id}', [DeleteSchoolsController::class, 'view']);
-   
+    Route::delete('/excluir-escola/{id}', [DeleteSchoolsController::class, 'edit']);
 });
+
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/administrar-professores', [ManagerTeachersController::class, 'view']);
 });

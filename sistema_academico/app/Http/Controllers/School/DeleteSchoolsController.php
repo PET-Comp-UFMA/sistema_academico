@@ -1,12 +1,10 @@
 <?php
  
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\School;
  
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use PhpParser\Node\Stmt\ElseIf_;
-use Illuminate\Support\Facades\DB;
 use App\Models\School;
+use App\Http\Controllers\Controller;
 
 class DeleteSchoolsController extends Controller
 {
@@ -19,7 +17,7 @@ class DeleteSchoolsController extends Controller
     public function view(Request $request, string $id )
     {   
         $school = School::find($id);
-        return view('forms.deleteSchool', ['school'=>$school]);
+        return view('forms.school.deleteSchool', ['school'=>$school]);
     }
 
     public function edit(Request $request, string $id)

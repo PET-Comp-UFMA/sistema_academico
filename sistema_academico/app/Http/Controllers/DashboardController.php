@@ -1,7 +1,8 @@
 <?php
  
 namespace App\Http\Controllers;
- 
+
+use App\Models\School;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Stmt\ElseIf_;
@@ -17,14 +18,17 @@ class DashboardController extends Controller
      */
     public function test(Request $request)
     {   
-       
         $user = auth()->user(); // Obtém o usuário autenticado
-        if ($user->admin) {
-            $schools = DB::table('schools')->get();
-            return view('dashboard.dashboard_adm', ['schools'=>$schools]);
-        }elseif ($user->student) {
+        $perfil = session('perfil');
+        if ($perfil == 'admin' && $user->admin) {
+            $schools = School::all();
+            return view('dashboard.dashboard_adm', ['schools' => $schools]);
+        }elseif ($perfil == 'student' && $user->student) {
             return view('dashboard.dashboard_student');
+        } elseif ($perfil == 'teacher' && $user->teacher) {
+            return view('dashboard.dashboard_teacher');
+        } else {
+            return redirect()->back()->with('error', 'Perfil não corresponde ao usuario');
         }
-        
     }
 }

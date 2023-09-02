@@ -18,7 +18,7 @@ class ManagerSchoolsController extends Controller
      */
     public function view(Request $request)
     {   
-        $schools = DB::table('schools')->get();
+        $schools = School::all();
         return view('manage.manage_schools',['schools'=>$schools]);
     }
 
