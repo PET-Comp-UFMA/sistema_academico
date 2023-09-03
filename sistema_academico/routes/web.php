@@ -50,6 +50,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/administrar-professores', [ManagerTeachersController::class, 'view']);
+
+    Route::get('/cadastrar-professor', [InsertSchoolsController::class, 'view']);
+    Route::post('/cadastrar-professor', [InsertSchoolsController::class, 'store']);
+    
+    Route::get('/atualizar-professor/{id}', [EditSchoolsController::class, 'view']);
+    Route::post('/atualizar-professor/{id}', [EditSchoolsController::class, 'edit']);
+    
+    Route::get('/excluir-professor/{id}', [DeleteSchoolsController::class, 'view']);
+    Route::delete('/excluir-professor/{id}', [DeleteSchoolsController::class, 'edit']);
 });
 
 
