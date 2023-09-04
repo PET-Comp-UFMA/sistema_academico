@@ -39,7 +39,7 @@
             <p id="sair">Sair</p>
         </div>
         <div id="dropdown-content" class="dropdown-content">
-            <ul>
+        <ul>
                 <li class=item id=item1><a href="#">Administrar Escolas</a></li>
                 <li class=item id=item2><a href="#">Administrar Supervisores</a></li>
                 <li class=item id=item3><a href="#">Administrar Professores</a></li>
@@ -47,7 +47,7 @@
                 <li class=item id=item5><a href="#">Administrar Disciplinas</a></li>
                 <li class=item id=item6><a href="#">Administrar Turmas</a></li>
             </ul>
-            </div>
+         </div>
     </header>
     <!-- <div tabindex="0" onclick="closeSidebar(), closeMenu()"class="content">
         <h1>marcosoajkspasjas</h1>

@@ -22,17 +22,14 @@
     color: var(--white);
 }
 
-.buttons_center,
-.logo_header,
-.icons_right {
+.buttons_center, .logo_header, .icons_right {
     display: flex;
     flex-direction: row;
     align-items: center;
-
+    
 }
 
-.buttons_center,
-.icons_right {
+.buttons_center, .icons_right {
     gap: 2rem;
 }
 
@@ -43,8 +40,8 @@
     border-radius: 3px;
 }
 
-.buttons_center a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.buttons_center a:hover{
+   background-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-icon-header {
@@ -114,8 +111,7 @@
     display: none;
 }
 
-.icons_right .user,
-p {
+.icons_right .user, p {
     cursor: pointer;
 }
 
@@ -123,25 +119,21 @@ p {
     padding: 0.5rem;
     border-radius: 3px;
 }
-
 .icons_right #sair {
     padding: 0.5rem;
     border-radius: 3px;
 }
-
 .icons_right #sair:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.icons_right .user:hover {
+.icons_right .user:hover{
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 
 @media screen and (max-width: 940px) {
-
-    .buttons_center,
-    .icons_right {
+    .buttons_center, .icons_right {
         gap: 0.5rem;
     }
 
@@ -159,7 +151,7 @@ p {
         position: absolute;
         flex-direction: column;
         top: 0;
-        background-color: var(--secondary-color);
+        background-color: var(--secondary-color) ;
         height: 100%;
         width: 65%;
         padding: 1rem;
@@ -175,7 +167,6 @@ p {
     .logo_header {
         display: none;
     }
-
     .menuOculto {
         display: flex;
         flex-direction: column;
@@ -195,7 +186,6 @@ p {
         from {
             margin-left: -200vw;
         }
-
         top {
             margin-left: -10vw;
         }

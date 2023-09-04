@@ -12,7 +12,7 @@
 <body>
     @include('components.header.header_adm');
 
-    <section class="administrar-escolas">
+    <section tabindex="0" onclick="closeSidebar(), closeMenu()" class="administrar-escolas">
         <h2>Administrar Professores</h2>
 
         {{-- <section class="pesquisa">

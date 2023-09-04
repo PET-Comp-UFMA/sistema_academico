@@ -10,13 +10,13 @@
     box-sizing: border-box;
 }
   
-header {
+/* header {
     height: 100px;
     background-color: #333;
     color: #fff;
     text-align: center;
     line-height: 100px;
-}
+} */
 
 .administrar-escolas {
     display: flex;
