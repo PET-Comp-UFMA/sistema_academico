@@ -1,39 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
 :root {
     /*cores */
-    --primary-color: #0056D2; /* Definindo cor --primary-color com a cor azul */
-    --secondary-color: #204963; /* Definindo cor --secondary-color com a cor azul escura */
-     --text-color: #333333; /*cor do texto em fundos brancos */
-    --color-information: #C8DEFF; /*cor para algo informativo */
-    --color-call-attention: #FF793F; /*cor do texto em fundos brancos */
-    --color-error: #EC0000; /*cor para chamar atenção do usuário */
-    --white: #FFFFFF; /*cor do texto em fundos brancos */
-    --gray-primary: #717070; /*cor para utilizar em bordas e linhas */
-    --gray-secondary: #E5E5E5; /*cor para utilizar em bordas e linhas */
-    --green-primary: #005200; /*cor para utilizar em confirmações*/
-   
+    --primary-color: #0056D2;
+    /* Definindo cor --primary-color com a cor azul */
+    --secondary-color: #204963;
+    /* Definindo cor --secondary-color com a cor azul escura */
+    --text-color: #333333;
+    /*cor do texto em fundos brancos */
+    --color-information: #C8DEFF;
+    /*cor para algo informativo */
+    --color-call-attention: #FF793F;
+    /*cor do texto em fundos brancos */
+    --color-error: #EC0000;
+    /*cor para chamar atenção do usuário */
+    --white: #FFFFFF;
+    /*cor do texto em fundos brancos */
+    --gray-primary: #717070;
+    /*cor para utilizar em bordas e linhas */
+    --gray-secondary: #E5E5E5;
+    /*cor para utilizar em bordas e linhas */
+    --green-primary: #005200;
+    /*cor para utilizar em confirmações*/
+
     /*famílias das fontes */
-    --font-tittle: 'Inter', sans-serif; /* Definindo familia das fontes de título */
-    --font-body: 'Inter', sans-serif; /* Definindo familia das fontes do corpo */
+    --font-tittle: 'Inter', sans-serif;
+    /* Definindo familia das fontes de título */
+    --font-body: 'Inter', sans-serif;
+    /* Definindo familia das fontes do corpo */
 
     /*Espessura das fontes */
     --font-tittle-weight: 600;
-    --font-subtittle-weight: 500; /* Definindo espessura das fontes de título */
-    --font-body-weight: 400; /* Definindo espessura das fontes de corpo */
-    --font-button-weight: 700; /* Definindo espessura das fontes de botão */
+    --font-subtittle-weight: 500;
+    /* Definindo espessura das fontes de título */
+    --font-body-weight: 400;
+    /* Definindo espessura das fontes de corpo */
+    --font-button-weight: 700;
+    /* Definindo espessura das fontes de botão */
 
     /*Tamanho das fontes */
-    --font-size-tittle-primary: 1.5rem; /* Definindo o tamanho das fontes de título */
-    --font-size-tittle-secondary: 48px; /* Definindo o tamanho das fontes de subtítulo */
-    --font-size-tittle-tertiary: 36px; /* Definindo o tamanho das fontes de subtítulo */
-    --font-size-subtittle-primary: 24px; /* Definindo o tamanho das fontes de subtítulo */
-    --font-size-subtittle-secondary: 16px; /* Definindo o tamanho das fontes de subtítulo */
-    --font-size-body-big: 16px; /* Definindo o tamanho das fontes do corpo */
-    --font-size-body-medium: 14px; /* Definindo o tamanho das fontes do corpo */
-    --font-size-body-small: 12px; /* Definindo o tamanho das fontes do corpo */
-    --font-size-button-big: 16px; /* Definindo o tamanho das fontes dos botões */
-    --font-size-button-medium: 14px; /* Definindo o tamanho das fontes dos botões */
-  }
+    --font-size-tittle-primary: 1.25rem;
+    /* Definindo o tamanho das fontes de título */
+    --font-size-tittle-secondary: 1.25rem;
+    /* Definindo o tamanho das fontes de subtítulo */
+    --font-size-tittle-tertiary: 36px;
+    /* Definindo o tamanho das fontes de subtítulo */
+    --font-size-subtittle-primary: 24px;
+    /* Definindo o tamanho das fontes de subtítulo */
+    --font-size-subtittle-secondary: 16px;
+    /* Definindo o tamanho das fontes de subtítulo */
+    --font-size-body-big: 16px;
+    /* Definindo o tamanho das fontes do corpo */
+    --font-size-body-medium: 14px;
+    /* Definindo o tamanho das fontes do corpo */
+    --font-size-body-small: 12px;
+    /* Definindo o tamanho das fontes do corpo */
+    --font-size-button-big: 16px;
+    /* Definindo o tamanho das fontes dos botões */
+    --font-size-button-medium: 14px;
+    /* Definindo o tamanho das fontes dos botões */
+}
 
 h1 {
     font-family: var(--font-tittle);
@@ -47,7 +73,7 @@ h2 {
     font-size: var(--font-size-tittle-secondary);
 }
 
-h3{
+h3 {
     font-family: var(--font-tittle);
     font-weight: var(--font-tittle-weight);
     font-size: var(--font-size-tittle-tertiary);
@@ -65,7 +91,10 @@ h5 {
     font-size: var(--font-size-subtittle-secondary);
 }
 
-label, p, option{
+label,
+p,
+option,
+a {
     font-family: var(--font-body);
     font-weight: var(--font-body-weight);
     font-size: var(--font-size-body-big);

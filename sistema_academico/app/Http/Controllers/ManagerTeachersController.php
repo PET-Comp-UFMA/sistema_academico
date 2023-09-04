@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Stmt\ElseIf_;
 use Illuminate\Support\Facades\DB;
 use App\Models\School;
+use App\Models\Teacher;
 
 class ManagerTeachersController extends Controller
 {
@@ -18,8 +19,7 @@ class ManagerTeachersController extends Controller
      */
     public function view(Request $request)
     {   
-        $teachers = DB::table('teachers')
-            ->join('users', 'users.id', '=', 'teachers.user_id')->get();
+        $teachers = Teacher::all();
             
         return view('manage.manage_teachers',['teachers'=>$teachers]);
     }

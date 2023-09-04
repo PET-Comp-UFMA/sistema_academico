@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Teacher;
 use Illuminate\Http\Request;
 use App\Models\Teacher;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
-class EditSchoolsController extends Controller
+class EditTeachersController extends Controller
 {
     /**
      * Handle an authentication attempt.
@@ -29,11 +30,12 @@ class EditSchoolsController extends Controller
         ]);
 
         $teacher = Teacher::find($id);
-        $teacher->nome =  $request->input('nome');
-        $teacher->email =  $request->input('email');
-        $teacher->password = password_hash($request->input('password'));
+        $teacher->user->nome =  $request->input('nome');
+        $teacher->user->email =  $request->input('email');
+        $teacher->user->password = Hash::make($request->input('password'));
 
         $teacher->save();
+        $teacher->user->save();
         return redirect()->route('adm-professor')->with('success', 'Dados salvos com sucesso.'); 
     }
 }

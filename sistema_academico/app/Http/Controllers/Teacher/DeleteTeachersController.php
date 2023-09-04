@@ -29,8 +29,9 @@ class DeleteTeachersController extends Controller
         $teacher = Teacher::find($id);
         $nome = $request->input('nome');
         
-        if ($teacher && $teacher->nome === $nome) {
+        if ($teacher && $teacher->user->nome === $nome) {
             $teacher->delete();
+            $teacher->user->delete();
             return redirect()->route('adm-professor')->with('success', 'Professor excluído com sucesso.');
         } else {
             return redirect()->route('adm-professor')->with('error', 'Não foi possível excluir o professor.');

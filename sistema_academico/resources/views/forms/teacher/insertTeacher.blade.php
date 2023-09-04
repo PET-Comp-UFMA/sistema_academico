@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/formSchool.css">
+    <link rel="stylesheet" href="/css/alert-pop-out.css">
     <title>Cadastrar Professor</title>
 </head>
 <body>
@@ -22,13 +23,23 @@
                 </div>
                 <div class="inputEscola">
                     <label for="endereco">Senha:<span>*</span></label>
-                    <input type="text" id="entrada" name="senha" required placeholder="Digite a senha">
+                    <input type="text" id="entrada" name="password" required placeholder="Digite a senha">
                 </div>
                 <div class="buttons">
                     <button type="submit" class="button" id="submitButton">Cadastrar</button>
-                    <button class="button" id="cancelButton"><a href="/administrar-escolas">Cancelar</a></button>
+                    <button class="button" id="cancelButton"><a href="/administrar-professores">Cancelar</a></button>
                 </div>
             </form>
     </section>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <script src="/js/alert-pop-out.js"></script>
 </body>
 </html>

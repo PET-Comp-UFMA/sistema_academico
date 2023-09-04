@@ -10,6 +10,10 @@ use App\Http\Controllers\School\InsertSchoolsController;
 use App\Http\Controllers\School\DeleteSchoolsController;
 use App\Http\Controllers\School\EditSchoolsController;
 
+use App\Http\Controllers\Teacher\InsertTeachersController;
+use App\Http\Controllers\Teacher\DeleteTeachersController;
+use App\Http\Controllers\Teacher\EditTeachersController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,16 +53,29 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/administrar-professores', [ManagerTeachersController::class, 'view']);
+    Route::get('/administrar-estudantes', [ManagerStudentsController::class, 'view'])->name('adm-estudante');
+    
+    Route::get('/cadastrar-estudante', [InsertStudentsController::class, 'view']);
+    Route::post('/cadastrar-estudante', [InsertStudentsController::class, 'store']);
+    
+    Route::get('/atualizar-estudante/{id}', [EditStudentsController::class, 'view']);
+    Route::post('/atualizar-estudante/{id}', [EditStudentsController::class, 'edit']);
+    
+    Route::get('/excluir-estudante/{id}', [DeleteStudentsController::class, 'view']);
+    Route::delete('/excluir-estudante/{id}', [DeleteStudentsController::class, 'edit']);
+});
 
-    Route::get('/cadastrar-professor', [InsertSchoolsController::class, 'view']);
-    Route::post('/cadastrar-professor', [InsertSchoolsController::class, 'store']);
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/administrar-professores', [ManagerTeachersController::class, 'view'])->name('adm-professor');
+
+    Route::get('/cadastrar-professor', [InsertTeachersController::class, 'view']);
+    Route::post('/cadastrar-professor', [InsertTeachersController::class, 'store']);
     
-    Route::get('/atualizar-professor/{id}', [EditSchoolsController::class, 'view']);
-    Route::post('/atualizar-professor/{id}', [EditSchoolsController::class, 'edit']);
+    Route::get('/atualizar-professor/{id}', [EditTeachersController::class, 'view']);
+    Route::post('/atualizar-professor/{id}', [EditTeachersController::class, 'edit']);
     
-    Route::get('/excluir-professor/{id}', [DeleteSchoolsController::class, 'view']);
-    Route::delete('/excluir-professor/{id}', [DeleteSchoolsController::class, 'edit']);
+    Route::get('/excluir-professor/{id}', [DeleteTeachersController::class, 'view']);
+    Route::delete('/excluir-professor/{id}', [DeleteTeachersController::class, 'edit']);
 });
 
 

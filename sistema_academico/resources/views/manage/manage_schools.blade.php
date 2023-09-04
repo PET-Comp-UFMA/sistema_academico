@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/manage.css">
     <link rel="stylesheet" href="/css/alert-pop-out.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Administrar Escolas</title>
 </head>
 <body>
-    <header>HEADER</header>
+    @include('components.header.header_adm');
 
     <section class="administrar-escolas">
         <h2>Administrar Escolas</h2>
@@ -56,7 +58,7 @@
         </section>
 
         <section class="cadastrar-escola">
-            <a href="/cadastrar-escola"><button class="button">Cadastrar Escola</button></a> 
+            <a href="/cadastrar-escola"><button class="button">Cadastrar Professor</button></a> 
         </section>
     </section>
     @if(session('success'))
@@ -70,5 +72,6 @@
         </div>
     @endif
     <script src="/js/alert-pop-out.js"></script>
+    @include('components.footer.footer_adm');
 </body>
 </html>
