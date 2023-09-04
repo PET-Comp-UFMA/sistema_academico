@@ -1,10 +1,12 @@
 <?php
  
-namespace App\Http\Controllers\School;
+namespace App\Http\Controllers\Student;
  
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class InsertStudentsController extends Controller
 {
@@ -22,19 +24,26 @@ class InsertStudentsController extends Controller
     public function store(Request $request)
     {   
         $nome = $request->input('nome');
-
-        // Verificar se já existe uma escola com o mesmo nome
-        if (Student::where('user_id', $user_id)->exists()) {
-            return redirect()->route('adm-escola')->with('error', 'Já existe uma escola com este nome.');
-        }
-
-        // Se não existir, crie e salve a nova escola
-        $school = new School([
-            'nome' => $nome,
-            'endereco' => $request->input('endereco'),
+        $email = $request->input('email');
+        $request->validate([
+            'nome' => 'required',
+            'email' => 'required|unique:users,email',
+        ], [
+            'required' => 'O campo nome é obrigatório.',
+            'email.unique' => 'Este email já está em uso.',
         ]);
+        // Se não existir, crie e salve o novo professor
+        $user = new User([
+            'nome' => $nome,
+            'email' => $email,
+            'telefone' => '99925505',
+            'password' => Hash::make($request->input('password'))
+        ]);
+        $user->save();
 
-        $school->save();
-        return redirect()->route('adm-escola')->with('success', 'Dados salvos com sucesso.');
+        $student= new Student(['user_id' => $user->id]);
+        $student->save();
+     
+        return redirect()->route('adm-estudante')->with('success', 'Dados salvos com sucesso.');
     }
 }

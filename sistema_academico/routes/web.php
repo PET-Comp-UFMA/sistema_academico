@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ManagerSchoolsController;
 use App\Http\Controllers\ManagerTeachersController;
+use App\Http\Controllers\ManagerStudentsController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\School\InsertSchoolsController;
@@ -13,6 +14,10 @@ use App\Http\Controllers\School\EditSchoolsController;
 use App\Http\Controllers\Teacher\InsertTeachersController;
 use App\Http\Controllers\Teacher\DeleteTeachersController;
 use App\Http\Controllers\Teacher\EditTeachersController;
+
+use App\Http\Controllers\Student\InsertStudentsController;
+use App\Http\Controllers\Student\DeleteStudentsController;
+use App\Http\Controllers\Student\EditStudentsController;
 
 /*
 |--------------------------------------------------------------------------

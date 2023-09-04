@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="/css/alert-pop-out.css">
 </head>
 <body>
-    <header>
-        <h1>header</h1>
-    </header>
     <main class="container">
             <form method="POST" action="{{route('login')}}" class="formLogin">
             @csrf 

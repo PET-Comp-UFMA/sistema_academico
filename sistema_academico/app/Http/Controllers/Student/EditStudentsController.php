@@ -1,12 +1,13 @@
 <?php
  
-namespace App\Http\Controllers\School;
+namespace App\Http\Controllers\Student;
  
 use Illuminate\Http\Request;
-use App\Models\School;
+use App\Models\Student;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
-class EditSchoolsController extends Controller
+class EditStudentsController extends Controller
 {
     /**
      * Handle an authentication attempt.
@@ -16,22 +17,25 @@ class EditSchoolsController extends Controller
      */
     public function view(Request $request, string $id )
     {   
-        $school = School::find($id);
-        return view('forms.school.editSchool', ['school'=>$school]);
+        $student = Student::find($id);
+        return view('forms.student.editStudent', ['student'=>$student]);
     }
 
     public function edit(Request $request, string $id)
     {   
         $request->validate([
             'nome' => 'required',
-            'endereco' => 'required',
+            'email' => 'required',
+            'password' => 'required'
         ]);
 
-        $school = School::find($id);
-        $school->nome =  $request->input('nome');
-        $school->endereco =  $request->input('endereco');
+        $student = Student::find($id);
+        $student->user->nome =  $request->input('nome');
+        $student->user->email =  $request->input('email');
+        $student->user->password = Hash::make($request->input('password'));
 
-        $school->save();
-        return redirect()->route('adm-escola')->with('success', 'Dados salvos com sucesso.'); 
+        $student->save();
+        $student->user->save();
+        return redirect()->route('adm-estudante')->with('success', 'Dados salvos com sucesso.'); 
     }
 }
