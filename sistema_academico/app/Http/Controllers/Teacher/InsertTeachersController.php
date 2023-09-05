@@ -31,7 +31,7 @@ class InsertTeachersController extends Controller
             'nome' => 'required',
             'email' => 'required|unique:users,email',
         ], [
-            'required' => 'O campo nome é obrigatório.',
+            'required' => 'Campo obrigatório não preenchido.',
             'email.unique' => 'Este email já está em uso.',
         ]);
         // Se não existir, crie e salve o novo professor

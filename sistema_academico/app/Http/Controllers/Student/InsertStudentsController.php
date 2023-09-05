@@ -28,8 +28,9 @@ class InsertStudentsController extends Controller
         $request->validate([
             'nome' => 'required',
             'email' => 'required|unique:users,email',
+            'password' => 'required'
         ], [
-            'required' => 'O campo nome é obrigatório.',
+            'required' => 'Campo obrigatório não preenchido.',
             'email.unique' => 'Este email já está em uso.',
         ]);
         // Se não existir, crie e salve o novo professor

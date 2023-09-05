@@ -26,7 +26,9 @@ class EditStudentsController extends Controller
         $request->validate([
             'nome' => 'required',
             'email' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+        ], [
+            'required' => 'Campo obrigatório não preenchido.',
         ]);
 
         $student = Student::find($id);
