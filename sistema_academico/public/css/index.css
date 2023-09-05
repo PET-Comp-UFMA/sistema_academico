@@ -94,7 +94,7 @@ h5 {
 label,
 p,
 option,
-a {
+a, td, th {
     font-family: var(--font-body);
     font-weight: var(--font-body-weight);
     font-size: var(--font-size-body-big);

@@ -48,8 +48,8 @@
                             <td>{{$teacher->user->nome}}</td>
                             <td>{{$teacher->user->email}}</td>
                             <td>
-                                <button class="buttonResult"><a href="/atualizar-professor/{{$teacher->id}}"><img src="/img/lapis.svg" alt=""></a></button>
-                                <button class="buttonResult" ><a href="/excluir-professor/{{$teacher->id}}"><img src="/img/lixo.svg" alt=""></a></button>
+                                <button class="buttonResult"><a href="/atualizar-professor/{{$teacher->id}}"><img class="icon-action" src="/img/lapis.svg" alt=""></a></button>
+                                <button class="buttonResult" ><a href="/excluir-professor/{{$teacher->id}}"><img class="icon-action" src="/img/lixo.svg" alt=""></a></button>
                             </td>
                         </tr>
                     @endforeach

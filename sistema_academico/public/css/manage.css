@@ -39,15 +39,16 @@
 .baixo input{
     width: 60%;
     border-radius: 5px;
-    border: 1.2px solid var(--cinza-claro-dicas, #757575);
+    border: 1.2px solid var(--gray-primary);
 }
 
 .button{
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: white;
     width: 200px;
     height: 40px;   
     cursor: pointer;
+    border-radius: 3px;
 }
 
 .buttonResult{  
@@ -83,4 +84,8 @@ th, td {
     display: flex;
     justify-content: end;
     padding: 20px;
+}
+
+.icon-action {
+    background: none;
 }

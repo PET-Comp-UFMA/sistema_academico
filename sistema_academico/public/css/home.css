@@ -1,0 +1,144 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 10%;
+    background-color: var(--white);
+    height: 4rem;
+    align-items: center;
+}
+
+.button-header {
+    padding: 0.5rem;
+    border-radius: 3px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.button-header:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+#inscrever {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+#inicio {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+    text-decoration-color: var(--secondary-color);
+}
+#inicio:hover{
+    text-decoration-color: var(--white);
+} 
+#inscrever:hover {
+    background-color: var(--primary-color);
+}
+
+.header-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.section {
+    min-width: 20rem;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding: 3rem 0;
+}
+.icon {
+    height: 250px;
+    width: 250px;
+}
+
+.impar {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.par {
+    color: var(--text-color);
+}
+
+.left, .right{
+    width: 50%;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.left {
+    display: flex;
+    text-align: start;
+    padding-left: 20%;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.right {
+    padding-right: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: end;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    height: 4rem;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+}
+
+.footer svg {
+    color: var(--white);
+}
+
+/* .iconsImpar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.iconsPar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+} */
+
+@media screen and (max-width: 860px) {
+    .icon {
+        height: 150px;
+        width: 150px;
+    }
+
+   .left {
+    padding-left: 8%;
+   }
+
+   .right {
+    padding-right: 8%;
+   }
+    
+}
