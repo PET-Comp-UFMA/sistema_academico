@@ -39,11 +39,11 @@
     /* Definindo espessura das fontes de botão */
 
     /*Tamanho das fontes */
-    --font-size-tittle-primary: 1.25rem;
+    --font-size-tittle-primary: 48px;
     /* Definindo o tamanho das fontes de título */
-    --font-size-tittle-secondary: 1.25rem;
+    --font-size-tittle-secondary: 36px;
     /* Definindo o tamanho das fontes de subtítulo */
-    --font-size-tittle-tertiary: 36px;
+    --font-size-tittle-tertiary: 24px;
     /* Definindo o tamanho das fontes de subtítulo */
     --font-size-subtittle-primary: 24px;
     /* Definindo o tamanho das fontes de subtítulo */
