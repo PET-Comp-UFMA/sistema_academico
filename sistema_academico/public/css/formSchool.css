@@ -10,13 +10,6 @@
     box-sizing: border-box;
 }
 
-header {
-    height: 100px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    line-height: 100px;
-}
 
 .cadastrar-escolas {
     display: flex;
@@ -33,17 +26,19 @@ header {
     padding: 20px;
 }
 
-.inputEscola{
+.inputForm{
     width: 50%;
     margin-top: 5px;
+    
 }
 
-.inputEscola input{
+.inputForm input, select{
     margin: 5px 0px 10px 0px;
     border-radius: 5px;
     border: 1.2px solid var(--Cinza-Claro-Dicas, #757575);
     width: 100%;
     padding: 10px 0px 10px 0px;
+    padding-left: 0.5rem;
 }
 
 .buttons{
@@ -61,8 +56,9 @@ header {
 }
 
 #submitButton{
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--white);
+    cursor: pointer;
 }
 
 #cancelButton{
