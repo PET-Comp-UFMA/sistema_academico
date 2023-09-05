@@ -25,6 +25,8 @@ class EditSchoolsController extends Controller
         $request->validate([
             'nome' => 'required',
             'endereco' => 'required',
+        ], [
+            'required' => 'Campo obrigatório não preenchido.',
         ]);
 
         $school = School::find($id);

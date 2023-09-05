@@ -26,7 +26,9 @@ class EditTeachersController extends Controller
         $request->validate([
             'nome' => 'required',
             'email' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+        ], [
+            'required' => 'Campo obrigatório não preenchido.',
         ]);
 
         $teacher = Teacher::find($id);

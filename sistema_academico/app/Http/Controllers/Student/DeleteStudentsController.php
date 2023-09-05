@@ -24,6 +24,8 @@ class DeleteStudentsController extends Controller
     {   
         $request->validate([
             'nome' => 'required',
+        ], [
+            'required' => 'Campo obrigatório não preenchido.'
         ]);
         $nome = $request->input('nome');
         

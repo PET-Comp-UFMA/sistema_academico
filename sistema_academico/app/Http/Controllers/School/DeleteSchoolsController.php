@@ -24,6 +24,8 @@ class DeleteSchoolsController extends Controller
     {   
         $request->validate([
             'nome' => 'required',
+        ], [
+            'required' => 'Campo obrigatório não preenchido.',
         ]);
         
         $nomeEscola = $request->input('nome');
