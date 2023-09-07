@@ -25,7 +25,7 @@
                 </div>
                 <div class="buttons">
                     <button type="submit" class="button" id="submitButton">Cadastrar</button>
-                    <button class="button" id="cancelButton"><a href="/administrar-escolas">Cancelar</a></button>
+                    <a class="button" id="cancelButton" href="/administrar-escolas">Cancelar</a>
                 </div>
             </form>
     </section>

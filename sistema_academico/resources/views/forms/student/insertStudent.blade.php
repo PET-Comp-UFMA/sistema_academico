@@ -43,14 +43,14 @@
                 <label for="school">Escola:<span>*</span></label>
                 <select id="school" name="school" required>
                     <option value="$school" hidden>Selecione</option>
-                        {{-- @foreach ($schools as $school)
+                        @foreach ($schools as $school)
                             <option value="{{$school->id}}">{{$school->nome}}</option>
-                        @endforeach --}}
+                        @endforeach
                 </select>
             </div>
             <div class="buttons">
                 <button type="submit" class="button" id="submitButton">Cadastrar</button>
-                <button class="button" id="cancelButton"><a href="/administrar-professores">Cancelar</a></button>
+                <a class="button" id="cancelButton" href="/administrar-estudantes">Cancelar</a>
             </div>
         </form>
     </section>
