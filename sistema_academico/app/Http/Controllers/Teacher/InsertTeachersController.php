@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Teacher;
  
 use Illuminate\Http\Request;
 use App\Models\Teacher;
+use App\Models\School;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -20,30 +21,46 @@ class InsertTeachersController extends Controller
      */
     public function view(Request $request)
     {   
-        return view('forms.teacher.insertTeacher');
+        $schools = School::all();
+        return view('forms.teacher.insertTeacher', ['schools'=>$schools]);
     }
 
     public function store(Request $request)
     {   
-        $nome = $request->input('nome');
+        $name = $request->input('name');
         $email = $request->input('email');
+        $password = $request->input('password');
+        $confirmedPassword = $request->input('confirmed-password');
+        $address = $request->input('address');
+        $phone = $request->input('phone');
+        $school = $request->input('school');
+
         $request->validate([
-            'nome' => 'required',
+            'name' => 'required',
             'email' => 'required|unique:users,email',
+            'password' => 'required',
+            'confirmed-password' => 'required|same:password',
+            'school' => 'required',
+            
         ], [
             'required' => 'Campo obrigatório não preenchido.',
+            'same' => 'Senhas não correspondem',
             'email.unique' => 'Este email já está em uso.',
         ]);
-        // Se não existir, crie e salve o novo professor
+        
         $user = new User([
-            'nome' => $nome,
+            'nome' => $name,
             'email' => $email,
-            'telefone' => '99925505',
-            'password' => Hash::make($request->input('password'))
+            'password' => Hash::make($request->input('password')),
+            'endereco' => $address,
+            'telefone' => $phone,
         ]);
         $user->save();
 
-        $teacher = new Teacher(['user_id' => $user->id]);
+        $teacher = new Teacher([
+            'user_id' => $user->id,
+            'escola_id' => $school,
+        ]);
         $teacher->save();
      
         return redirect()->route('adm-professor')->with('success', 'Dados salvos com sucesso.');

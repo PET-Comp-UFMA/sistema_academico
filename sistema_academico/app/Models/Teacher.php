@@ -10,6 +10,7 @@ class Teacher extends Model
     protected $table = 'professor';
     protected $fillable = [
         'user_id',
+        'escola_id',
     ];
 
     // Defina o relacionamento com a tabela Usuario

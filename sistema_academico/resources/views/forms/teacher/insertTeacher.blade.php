@@ -44,10 +44,9 @@
                     <label for="school">Escola:<span>*</span></label>
                     <select id="school" name="school" required>
                         <option value="$school" hidden>Selecione</option>
-                            <option value="marcos">Marcos</option>
-                        {{-- @foreach ($schools as $school)
-                            <option value="{{$school->id}}">{{$school->name}}</option>
-                        @enforeach --}}
+                            @foreach ($schools as $school)
+                                <option value="{{$school->id}}">{{$school->nome}}</option>
+                            @endforeach
                     </select>
                 </div>
                 <div class="radio">
@@ -69,7 +68,7 @@
                 </div>
             </form>
     </section>
-    @if ($errors->any())
+    @if($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)

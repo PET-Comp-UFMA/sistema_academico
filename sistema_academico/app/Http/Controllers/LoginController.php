@@ -31,4 +31,9 @@ class LoginController extends Controller
             'email' => 'Credenciais não existem ou não correspondem aos nossos registros',
         ]);
     }
+    public function logout()
+    {
+        Auth::logout(); // Efetua o logout do usuário
+        return redirect('/'); // Redireciona para a página inicial ou qualquer outra página desejada
+    }
 }

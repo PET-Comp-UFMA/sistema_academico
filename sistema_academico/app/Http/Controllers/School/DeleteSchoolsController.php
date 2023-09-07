@@ -27,15 +27,24 @@ class DeleteSchoolsController extends Controller
         ], [
             'required' => 'Campo obrigatório não preenchido.',
         ]);
-        
-        $nomeEscola = $request->input('nome');
+    
         $school = School::find($id);
-        
-        if ($school && $school->nome === $nomeEscola) {
-            $school->delete();
-            return redirect()->route('adm-escola')->with('success', 'Escola excluída com sucesso.');
+    
+        if (!$school) {
+            return redirect()->route('adm-escola')->with('error', 'Escola não encontrada.');
+        }
+    
+        $nomeEscola = $request->input('nome');
+    
+        if ($school->nome === $nomeEscola) {
+            try {
+                $school->delete();
+                return redirect()->route('adm-escola')->with('success', 'Escola excluída com sucesso.');
+            } catch (\Throwable $th) {
+                return redirect()->route('adm-escola')->with('error', 'Escola não pode ser excluída');
+            }
         } else {
-            return redirect()->route('adm-escola')->with('error', 'Não foi possível excluir a escola.');
+            return redirect()->route('adm-escola')->with('error', 'O nome da escola não corresponde ao registro.');
         }
     }
 }
