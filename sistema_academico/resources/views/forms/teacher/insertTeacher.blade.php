@@ -50,6 +50,18 @@
                         @enforeach --}}
                     </select>
                 </div>
+                <div class="radio">
+                    <label for="manager">Supervisor:<span>*</span></label>
+                    <div class="check">
+                        <label>
+                            <input type="radio" name="manager" value="Sim" required> Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="manager" value="Não"> Não
+                        </label>
+                    </div>
+                    
+                </div>
                 
                 <div class="buttons">
                     <button type="submit" class="button" id="submitButton">Cadastrar</button>

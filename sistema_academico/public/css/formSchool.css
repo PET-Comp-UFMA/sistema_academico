@@ -75,3 +75,16 @@ span{
 .error{
     display: none;
 }
+
+.radio {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.check {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
