@@ -26,11 +26,11 @@
                 </div>
                 <div class="inputForm">
                     <label for="password">Senha:<span>*</span></label>
-                    <input type="text" id="entrada" name="password" required placeholder="Digite a senha">
+                    <input type="password" id="entrada" name="password" required placeholder="Digite a senha">
                 </div>
                 <div class="inputForm">
                     <label for="confirmed-password">Confirmar senha:<span>*</span></label>
-                    <input type="text" id="entrada" name="confirmed-password" required placeholder="Digite a senha novamente">
+                    <input type="password" id="entrada" name="confirmed-password" required placeholder="Digite a senha novamente">
                 </div>
                 <div class="inputForm">
                     <label for="address">Endereço:</label>
@@ -53,10 +53,10 @@
                     <label for="manager">Supervisor:<span>*</span></label>
                     <div class="check">
                         <label>
-                            <input type="radio" name="manager" value="Sim" required> Sim
+                            <input type="radio" name="supervisor" value="yes" required> Sim
                         </label>
                         <label>
-                            <input type="radio" name="manager" value="Não"> Não
+                            <input type="radio" name="supervisor" value="not"> Não
                         </label>
                     </div>
                     

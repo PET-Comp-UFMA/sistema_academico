@@ -58,7 +58,7 @@
         </section>
 
         <section class="cadastrar-escola">
-            <a href="/cadastrar-escola"><button class="button">Cadastrar Professor</button></a> 
+            <a href="/cadastrar-escola"><button class="button">Cadastrar Escola</button></a> 
         </section>
     </section>
     @if(session('success'))

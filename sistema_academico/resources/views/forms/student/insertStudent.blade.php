@@ -13,25 +13,46 @@
     @include('components.header.header_adm');
     <section class="cadastrar-escolas" tabindex="0" onclick="closeSidebar(), closeMenu()">
         <h2>Cadastrar Estudante</h2>
-            <form method="POST" action="/cadastrar-estudante" class="cadastro" id="myForm">
-                @csrf
-                <div class="inputForm">
-                    <label for="nome">Nome:<span>*</span></label>
-                    <input type="text" id="entrada" name="nome" required placeholder="Digite o nome">
-                </div>
-                <div class="inputForm">
-                    <label for="endereco">E-mail:<span>*</span></label>
-                    <input type="text" id="entrada" name="email" required placeholder="Digite o email">
-                </div>
-                <div class="inputForm">
-                    <label for="endereco">Senha:<span>*</span></label>
-                    <input type="text" id="entrada" name="password" required placeholder="Digite a senha">
-                </div>
-                <div class="buttons">
-                    <button type="submit" class="button" id="submitButton">Cadastrar</button>
-                    <button class="button" id="cancelButton"><a href="/administrar-estudantes">Cancelar</a></button>
-                </div>
-            </form>
+        <form method="POST" action="/cadastrar-estudante" class="cadastro" id="myForm">
+            @csrf
+            <div class="inputForm">
+                <label for="name">Nome:<span>*</span></label>
+                <input type="text" id="entrada" name="name" required placeholder="Digite o nome">
+            </div>
+            <div class="inputForm">
+                <label for="email">E-mail:<span>*</span></label>
+                <input type="text" id="entrada" name="email" required placeholder="Digite o email">
+            </div>
+            <div class="inputForm">
+                <label for="password">Senha:<span>*</span></label>
+                <input type="password" id="entrada" name="password" required placeholder="Digite a senha">
+            </div>
+            <div class="inputForm">
+                <label for="confirmed-password">Confirmar senha:<span>*</span></label>
+                <input type="password" id="entrada" name="confirmed-password" required placeholder="Digite a senha novamente">
+            </div>
+            <div class="inputForm">
+                <label for="address">Endereço:</label>
+                <input type="text" id="entrada" name="address" placeholder="Digite o endereço">
+            </div>
+            <div class="inputForm">
+                <label for="phone">Telefone:</label>
+                <input type="text" id="entrada" name="phone" placeholder="Digite o telefone">
+            </div>
+            <div class="inputForm">
+                <label for="school">Escola:<span>*</span></label>
+                <select id="school" name="school" required>
+                    <option value="$school" hidden>Selecione</option>
+                        {{-- @foreach ($schools as $school)
+                            <option value="{{$school->id}}">{{$school->nome}}</option>
+                        @endforeach --}}
+                </select>
+            </div>
+            <div class="buttons">
+                <button type="submit" class="button" id="submitButton">Cadastrar</button>
+                <button class="button" id="cancelButton"><a href="/administrar-professores">Cancelar</a></button>
+            </div>
+        </form>
     </section>
     @if ($errors->any())
         <div class="alert alert-danger">

@@ -122,6 +122,10 @@
 .icons_right #sair {
     padding: 0.5rem;
     border-radius: 3px;
+    color: var(--white);
+    background: none;
+    font-weight: var(--font-body-weight);
+    cursor: pointer;
 }
 .icons_right #sair:hover {
     background-color: rgba(255, 255, 255, 0.2);
