@@ -42,7 +42,7 @@
             <div class="inputForm">
                 <label for="school">Escola:<span>*</span></label>
                 <select id="school" name="school" required>
-                    <option value="$school">{{$student->school->nome}}</option>
+                    <option value="{{$student->school->id}}">{{$student->school->nome}}</option>
                     @foreach ($schools as $school)
                         @if ($student->school->id != $school->id) 
                             <option value="{{$school->id}}">{{$school->nome}}</option>

@@ -37,8 +37,7 @@ class EditStudentsController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'school' => 'required',
-            'supervisor' => 'required'
+            'school' => 'required'
         ], [
             'required' => 'Campo obrigatório não preenchido.',
         ]);

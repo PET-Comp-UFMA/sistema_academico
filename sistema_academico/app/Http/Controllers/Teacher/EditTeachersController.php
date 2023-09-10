@@ -38,7 +38,6 @@ class EditTeachersController extends Controller
             'name' => 'required',
             'email' => 'required',
             'school' => 'required',
-            'supervisor' => 'required'
         ], [
             'required' => 'Campo obrigatório não preenchido.'
         ]);

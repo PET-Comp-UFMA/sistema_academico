@@ -32,9 +32,13 @@ class DeleteTeachersController extends Controller
         $nome = $request->input('nome');
         
         if ($teacher && $teacher->user->nome === $nome) {
-            $teacher->delete();
-            $teacher->user->delete();
-            return redirect()->route('adm-professor')->with('success', 'Professor excluído com sucesso.');
+            try {
+                $teacher->user->delete();
+                $teacher->delete();
+                return redirect()->route('adm-professor')->with('success', 'Professor excluído com sucesso.');
+            } catch (\Throwable $th) {
+                return redirect()->route('adm-professor')->with('error', 'Professor não pode ser excluído pois ele é supervisor.');
+            }
         } else {
             return redirect()->route('adm-professor')->with('error', 'Não foi possível excluir o professor.');
         }
