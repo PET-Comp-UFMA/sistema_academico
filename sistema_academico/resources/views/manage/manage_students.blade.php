@@ -29,9 +29,9 @@
             </form>    
         </section> --}}
 
-        <section class="quantidade">
+        {{-- <section class="quantidade">
             <p>Exibindo X itens</p>
-        </section>
+        </section> --}}
 
         <section class="resultados">
             <table class="tabela">
@@ -39,6 +39,7 @@
                     <tr class="cabecalho">
                         <th>Nome</th>
                         <th>Email</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
