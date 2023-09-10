@@ -64,7 +64,7 @@
                 
                 <div class="buttons">
                     <button type="submit" class="button" id="submitButton">Cadastrar</button>
-                    <button class="button" id="cancelButton"><a href="/administrar-professores">Cancelar</a></button>
+                    <a class="button" id="cancelButton" href="/administrar-professores">Cancelar</a>
                 </div>
             </form>
     </section>
