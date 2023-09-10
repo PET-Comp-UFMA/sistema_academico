@@ -42,8 +42,6 @@ Route::post('/logout',
     [LoginController::class, 'logout']
 )->middleware('auth')->name('logout');
 
-
-
 Route::get('/dashboard', 
     [DashboardController::class, 'test']
 )->middleware('auth');
