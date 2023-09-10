@@ -95,3 +95,7 @@ span{
     flex-direction: row;
     gap: 1rem;
 }
+
+#inputExcluir {
+    margin-top: 1.5rem;
+}

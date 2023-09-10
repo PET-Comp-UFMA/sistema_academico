@@ -42,10 +42,12 @@
             <div class="inputForm">
                 <label for="school">Escola:<span>*</span></label>
                 <select id="school" name="school" required>
-                    <option value="$school" hidden>{{$teacher->user->escola}}"</option>
-                        {{-- @foreach ($schools as $school)
-                            <option value="{{$school->id}}">{{$school->nome}}</option>
-                        @endforeach --}}
+                    <option value={{$teacher->school->id}}>{{$teacher->school->nome}}</option>
+                        @foreach ($schools as $school)
+                            @if ($teacher->school->id != $school->id) 
+                                <option value="{{$school->id}}">{{$school->nome}}</option>
+                            @endif
+                        @endforeach
                 </select>
             </div>
             {{-- <div class="radio">

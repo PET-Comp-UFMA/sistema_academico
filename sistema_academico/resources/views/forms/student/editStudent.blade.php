@@ -42,10 +42,12 @@
             <div class="inputForm">
                 <label for="school">Escola:<span>*</span></label>
                 <select id="school" name="school" required>
-                    <option value="$school" hidden>{{$student->user->escola}}"</option>
-                        {{-- @foreach ($schools as $school)
+                    <option value="$school">{{$student->school->nome}}</option>
+                    @foreach ($schools as $school)
+                        @if ($student->school->id != $school->id) 
                             <option value="{{$school->id}}">{{$school->nome}}</option>
-                        @endforeach --}}
+                        @endif
+                    @endforeach
                 </select>
             </div>
             {{-- <div class="radio">
@@ -63,7 +65,7 @@
             
             <div class="buttons">
                 <button type="submit" class="button" id="submitButton">Salvar</button>
-                <a class="button" id="cancelButton" href="/administrar-estudante">Cancelar</a>
+                <a class="button" id="cancelButton" href="/administrar-estudantes">Cancelar</a>
             </div>
         </form>
     </section>

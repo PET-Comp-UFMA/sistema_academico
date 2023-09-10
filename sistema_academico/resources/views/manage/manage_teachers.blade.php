@@ -38,7 +38,10 @@
                 <thead>
                     <tr class="cabecalho">
                         <th>Nome</th>
+                        <th>Email</th>
                         <th>Endereço</th>
+                        <th>Telefone</th>
+                        <th>Escola</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -47,6 +50,9 @@
                         <tr>
                             <td>{{$teacher->user->nome}}</td>
                             <td>{{$teacher->user->email}}</td>
+                            <td>{{$teacher->user->endereco}}</td>
+                            <td>{{$teacher->user->telefone}}</td>
+                            <td>{{$teacher->school->nome}}</td>
                             <td>
                                 <button class="buttonResult"><a href="/atualizar-professor/{{$teacher->id}}"><img class="icon-action" src="/img/lapis.svg" alt=""></a></button>
                                 <button class="buttonResult" ><a href="/excluir-professor/{{$teacher->id}}"><img class="icon-action" src="/img/lixo.svg" alt=""></a></button>
