@@ -1,15 +1,18 @@
 <?php
  
-namespace App\Http\Controllers\Student;
+namespace App\Http\Controllers\Teacher;
  
 use Illuminate\Http\Request;
-use App\Models\Student;
+use App\Models\Teacher;
+use App\Models\Supervisor;
 use App\Models\School;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class InsertStudentsController extends Controller
+class InsertTeachersController extends Controller
 {
     /**
      * Handle an authentication attempt.
@@ -20,9 +23,7 @@ class InsertStudentsController extends Controller
     public function view(Request $request)
     {   
         $schools = School::all();
-        return view('forms.student.insertStudent',[
-            'schools'=>$schools
-        ]);
+        return view('forms.teacher.insertTeacher', ['schools'=>$schools]);
     }
 
     public function store(Request $request)
@@ -34,6 +35,7 @@ class InsertStudentsController extends Controller
         $address = $request->input('address');
         $phone = $request->input('phone');
         $school = $request->input('school');
+        $isSupervisor = $request->input('supervisor');
 
         $request->validate([
             'name' => 'required',
@@ -41,6 +43,7 @@ class InsertStudentsController extends Controller
             'password' => 'required',
             'confirmed-password' => 'required|same:password',
             'school' => 'required',
+            'supervisor' => 'required'
         ], [
             'required' => 'Campo obrigatório não preenchido.',
             'same' => 'Senhas não correspondem',
@@ -56,21 +59,30 @@ class InsertStudentsController extends Controller
         ]);
         $user->save();
 
-        $student = null;
-        if ($user) {
-            $student= new Student([
-                'user_id' => $user->id,
-                'escola_id' => $school->id,
+        $teacher = null;
+        $supervisor = null;
 
+        if ($user) {
+            $teacher = new Teacher([
+                'user_id' => $user->id,
+                'escola_id' => $school,
             ]);
-            $student->save();
+            $teacher->save();
         }
 
-        if ($user && $student) {
-            return redirect()->route('adm-estudante')->with('success', 'Dados salvos com sucesso.');
+        if ($teacher && $isSupervisor == 'yes') {
+            $supervisor = new Supervisor([
+                'professor_id' => $teacher->id
+            ]);
+            $supervisor->save();
+        }
+
+        if ($user && $teacher && (!$supervisor || $supervisor->id)) {
+            return redirect()->route('adm-professor')->with('success', 'Dados salvos com sucesso.');
         } else {
             // Redirecionar em caso de erro
             return redirect()->back()->with('error', 'Erro ao criar professor.');
         }
+
     }
 }
