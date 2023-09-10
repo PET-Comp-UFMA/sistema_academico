@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Student;
  
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\School;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,26 +19,40 @@ class EditStudentsController extends Controller
     public function view(Request $request, string $id )
     {   
         $student = Student::find($id);
-        return view('forms.student.editStudent', ['student'=>$student]);
+        $schools = School::all();
+        return view('forms.student.editStudent', [
+            'student'=>$student,
+            'schools'=>$schools
+        ]);
     }
 
     public function edit(Request $request, string $id)
     {   
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $address = $request->input('address');
+        $phone = $request->input('phone');
+        $school = $request->input('school');
+        
         $request->validate([
-            'nome' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'name' => 'required',
+            'email' => 'required|unique:users,email',
+            'school' => 'required',
+            'supervisor' => 'required'
         ], [
             'required' => 'Campo obrigatório não preenchido.',
+            'email.unique' => 'Este email já está em uso.',
         ]);
 
         $student = Student::find($id);
-        $student->user->nome =  $request->input('nome');
-        $student->user->email =  $request->input('email');
-        $student->user->password = Hash::make($request->input('password'));
-
+        $student->user->nome =  $name;
+        $student->user->email =  $email;
+        $student->user->endereco =  $address;
+        $student->user->telefone =  $phone;
+        $student->escola_id =  $school;
         $student->save();
         $student->user->save();
+
         return redirect()->route('adm-estudante')->with('success', 'Dados salvos com sucesso.'); 
     }
 }

@@ -20,7 +20,6 @@ class ManagerTeachersController extends Controller
     public function view(Request $request)
     {   
         $teachers = Teacher::all();
-            
         return view('manage.manage_teachers',['teachers'=>$teachers]);
     }
     
