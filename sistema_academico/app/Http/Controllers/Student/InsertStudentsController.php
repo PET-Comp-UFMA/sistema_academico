@@ -60,7 +60,7 @@ class InsertStudentsController extends Controller
         if ($user) {
             $student= new Student([
                 'user_id' => $user->id,
-                'escola_id' => $school->id,
+                'escola_id' => $school,
 
             ]);
             $student->save();
