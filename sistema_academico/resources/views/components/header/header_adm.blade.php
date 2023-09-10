@@ -30,7 +30,7 @@
                 @auth
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit">Logout</button>
+                    <button class="sair" type="submit">Sair</button>
                 </form>
                 @endauth
             </div>
@@ -44,7 +44,7 @@
             @auth
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button id="sair" type="submit">Sair</button>
+                    <button class="sair" id="sair" type="submit">Sair</button>
                 </form>
             @endauth
         </div>

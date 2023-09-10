@@ -37,7 +37,7 @@
             </div>
             <div class="inputForm">
                 <label for="phone">Telefone:</label>
-                <input type="text" id="entrada" name="phone" placeholder="Digite o telefone">
+                <input maxlength="12" type="text" id="entrada" name="phone" placeholder="Digite o telefone">
             </div>
             <div class="inputForm">
                 <label for="school">Escola:<span>*</span></label>

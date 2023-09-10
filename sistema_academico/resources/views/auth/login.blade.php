@@ -33,7 +33,11 @@
                 @error('email')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-               <button class="inputs" id="button1" type="submit">Entrar</button>
+                <div class="submit">
+                    <a class="buttons" id="button2" href="/">Cancelar</a>
+                    <button class="buttons" id="button1" type="submit">Entrar</button>
+                </div>
+                
                @if(session('error'))
                 <div id="error-message" class="alert alert-danger" style="display: none;">
                     {{ session('error') }}
