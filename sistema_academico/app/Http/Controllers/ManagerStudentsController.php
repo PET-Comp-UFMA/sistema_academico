@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\School;
 
 class ManagerStudentsController extends Controller
 {
@@ -15,9 +16,10 @@ class ManagerStudentsController extends Controller
      */
     public function view(Request $request)
     {   
-        $students = Student::all();
-            
-        return view('manage.manage_students',['students'=>$students]);
+        $students = Student::all();  
+        return view('manage.manage_students',[
+            'students'=>$students
+        ]);
     }
     
 }
