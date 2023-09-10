@@ -25,6 +25,7 @@ class DeleteTeachersController extends Controller
         $request->validate([
             'nome' => 'required',
         ], [
+            'required' => 'Campo obrigatório não preenchido.',
         ]);
         
         $teacher = Teacher::find($id);

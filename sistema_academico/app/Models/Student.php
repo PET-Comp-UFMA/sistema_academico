@@ -9,6 +9,7 @@ class Student extends Model
     protected $table = 'aluno';
     protected $fillable = [
         'user_id',
+        'escola_id',
     ];
 
     // Defina o relacionamento com a tabela Usuario
